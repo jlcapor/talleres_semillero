@@ -1,3 +1,4 @@
+package array;
 public class SumaElementosArray {
     public static void main(String[] args) throws Exception {
         int suma = 0;

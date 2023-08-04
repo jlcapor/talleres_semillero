@@ -1,4 +1,5 @@
-public class OrdenarElementos {
+package array;
+public class OrdenarElementosArray {
     public static void bubbleSort(int[] array) {
         boolean swap = true;
         while (swap) {

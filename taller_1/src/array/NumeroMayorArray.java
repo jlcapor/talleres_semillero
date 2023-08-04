@@ -1,3 +1,4 @@
+package array;
 public class NumeroMayorArray {
 
     public static int maximo(int array[]) {
