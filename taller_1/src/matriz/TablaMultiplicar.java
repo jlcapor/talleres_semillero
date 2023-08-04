@@ -15,6 +15,7 @@ public class TablaMultiplicar {
         int i, j;
 
         for (i = 1; i <= matriz.length - 1; i++) {
+            System.out.println("Tabla de multiplicar del " + i);
             for (j = 1; j <= matriz[i].length - 1; j++) {
                 System.out.println(i + " x " + j + " = " + matriz[i][j]);
             }
