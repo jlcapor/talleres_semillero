@@ -3,7 +3,6 @@ public class OrdenarElementosArray {
     public static void bubbleSort(int[] array) {
         boolean swap = true;
         while (swap) {
-
             //[2, 1, 4, 5, 3, 7]
             // i
             swap = false;
