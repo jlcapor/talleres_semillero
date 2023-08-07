@@ -16,6 +16,7 @@ public class Reserva {
     private LocalDate checkOut;
     private EstadoReserva estado;
 
+
     public Cliente getCliente() {
         return cliente;
     }
@@ -64,4 +65,8 @@ public class Reserva {
         this.estado = estado;
     }
 
+  
+
+   
+    
 }

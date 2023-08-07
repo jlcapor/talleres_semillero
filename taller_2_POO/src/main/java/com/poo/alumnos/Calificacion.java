@@ -1,10 +1,10 @@
 package main.java.com.poo.alumnos;
 
-public class Nota {
+public class Calificacion {
     private double valor;
     private Asignatura asignatura;
 
-    public Nota(double valor, Asignatura asignatura) {
+    public Calificacion(double valor, Asignatura asignatura) {
         this.valor = valor;
         this.asignatura = asignatura;
     }
@@ -23,6 +23,11 @@ public class Nota {
 
     public void setAsignatura(Asignatura asignatura) {
         this.asignatura = asignatura;
+    }
+
+    @Override
+    public String toString() {
+        return asignatura.getNombre() + ": " + valor;
     }
 
 }
