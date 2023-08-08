@@ -2,15 +2,15 @@ package main.java.com.poo.reservashotel;
 
 public class ClienteRegular extends Cliente {
     private int puntosFidelidad;
+    private int numeroVisitas;
     private String nivelMembresia;
-    private String preferenciaHabitacion;
 
     public ClienteRegular(String nombre, String apellidos, String cedula, String direccion, String telefono,
-            String correoElectronico, int puntosFidelidad, String nivelMembresia, String preferenciaHabitacion) {
+            String correoElectronico, int puntosFidelidad, int numeroVisitas, String nivelMembresia) {
         super(nombre, apellidos, cedula, direccion, telefono, correoElectronico);
         this.puntosFidelidad = puntosFidelidad;
+        this.numeroVisitas = numeroVisitas;
         this.nivelMembresia = nivelMembresia;
-        this.preferenciaHabitacion = preferenciaHabitacion;
     }
 
     public int getPuntosFidelidad() {
@@ -21,20 +21,20 @@ public class ClienteRegular extends Cliente {
         this.puntosFidelidad = puntosFidelidad;
     }
 
+    public int getNumeroVisitas() {
+        return numeroVisitas;
+    }
+
+    public void setNumeroVisitas(int numeroVisitas) {
+        this.numeroVisitas = numeroVisitas;
+    }
+
     public String getNivelMembresia() {
         return nivelMembresia;
     }
 
     public void setNivelMembresia(String nivelMembresia) {
         this.nivelMembresia = nivelMembresia;
-    }
-
-    public String getPreferenciaHabitacion() {
-        return preferenciaHabitacion;
-    }
-
-    public void setPreferenciaHabitacion(String preferenciaHabitacion) {
-        this.preferenciaHabitacion = preferenciaHabitacion;
     }
 
 }

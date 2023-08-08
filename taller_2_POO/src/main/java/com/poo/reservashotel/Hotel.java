@@ -1,19 +1,25 @@
 package main.java.com.poo.reservashotel;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Hotel {
     private String nombre;
     private String direccion;
     private String telefono;
-    private Map<Integer, Habitacion> habitaciones;
+    private int cantidadHabitaciones;
+    private List<Habitacion> habitaciones;
 
-    public Hotel(String nombre, String direccion, String telefono) {
+    public Hotel(String nombre, String direccion, String telefono, int cantidadHabitaciones) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
-        this.habitaciones = new HashMap<>();
+        this.cantidadHabitaciones = cantidadHabitaciones;
+        this.habitaciones = new ArrayList<>();
+        for (int i = 1; i <= cantidadHabitaciones; i++) {
+            habitaciones.add(new Habitacion(i, null));
+        }
     }
 
     public String getNombre() {
@@ -40,12 +46,26 @@ public class Hotel {
         this.telefono = telefono;
     }
 
-    public Map<Integer, Habitacion> getHabitaciones() {
-        return habitaciones;
+    public int getCantidadHabitaciones() {
+        return cantidadHabitaciones;
     }
 
-    public void setHabitaciones(Map<Integer, Habitacion> habitaciones) {
-        this.habitaciones = habitaciones;
+    public void setCantidadHabitaciones(int cantidadHabitaciones) {
+        this.cantidadHabitaciones = cantidadHabitaciones;
+    }
+
+    public void agregarHabitacion(int numero, TipoHabitacion tipo) {
+        habitaciones.add(new Habitacion(numero, tipo));
+    }
+
+    public List<Habitacion> getHabitacionesDisponibles() {
+        List<Habitacion> disponibles = new ArrayList<>();
+        for (Habitacion habitacion : habitaciones) {
+            if (habitacion.isDisponible()) {
+                disponibles.add(habitacion);
+            }
+        }
+        return disponibles;
     }
 
 }

@@ -1,39 +1,47 @@
 package main.java.com.poo.alumnos;
 
+import java.util.ArrayList;
+import java.util.List;
 
-public class Alumno {
-    private int id;
-    private String nombre;
-    private int edad;
+import javax.swing.JOptionPane;
 
-    public Alumno(String nombre, int edad) {
-        this.nombre = nombre;
-        this.edad = edad;
+public class Alumno extends Persona {
 
+    private List<Calificacion> calificaciones;
+
+    public Alumno(int codigo, String nombre, String apellidos, int edad, String direccion, String correoElectronico,
+            String numeroTelefono) {
+        super(codigo, nombre, apellidos, edad, direccion, correoElectronico, numeroTelefono);
+        this.calificaciones = new ArrayList<>();
     }
 
-    public String getNombre() {
-        return nombre;
+    public List<Calificacion> getCalificaciones() {
+        return calificaciones;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void agregarCalificacion(double valor) {
+        Calificacion calificacion = new Calificacion(valor);
+        calificaciones.add(calificacion);
     }
 
-    public int getEdad() {
-        return edad;
+    public double calcularPromedio() {
+        if (calificaciones.isEmpty()) {
+            return 0;
+        }
+
+        double total = 0;
+        for (Calificacion calificacion : calificaciones) {
+            total += calificacion.getValor();
+        }
+        return total / calificaciones.size();
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void mostrarInformacion() {
+        String info = "Nombre: " + getNombre() +
+                "\nEdad: " + getEdad() +
+                "\nCalificaciones: " + getCalificaciones() +
+                "\nPromedio de calificaciones: " + calcularPromedio();
+        JOptionPane.showMessageDialog(null, info);
     }
 
 }

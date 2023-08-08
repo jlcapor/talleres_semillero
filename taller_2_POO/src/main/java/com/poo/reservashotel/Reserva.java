@@ -10,12 +10,17 @@ public class Reserva {
     }
 
     private Cliente cliente;
-    private Hotel hotel;
     private Habitacion habitacion;
-    private LocalDate checkIn;
-    private LocalDate checkOut;
+    private LocalDate fechaInicio;
+    private LocalDate fechaFin;
     private EstadoReserva estado;
 
+    public Reserva(Cliente cliente, Habitacion habitacion, LocalDate fechaInicio, LocalDate fechaFin) {
+        this.cliente = cliente;
+        this.habitacion = habitacion;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+    }
 
     public Cliente getCliente() {
         return cliente;
@@ -23,14 +28,6 @@ public class Reserva {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
-    }
-
-    public Hotel getHotel() {
-        return hotel;
-    }
-
-    public void setHotel(Hotel hotel) {
-        this.hotel = hotel;
     }
 
     public Habitacion getHabitacion() {
@@ -41,20 +38,20 @@ public class Reserva {
         this.habitacion = habitacion;
     }
 
-    public LocalDate getCheckIn() {
-        return checkIn;
+    public LocalDate getFechaInicio() {
+        return fechaInicio;
     }
 
-    public void setCheckIn(LocalDate checkIn) {
-        this.checkIn = checkIn;
+    public void setFechaInicio(LocalDate fechaInicio) {
+        this.fechaInicio = fechaInicio;
     }
 
-    public LocalDate getCheckOut() {
-        return checkOut;
+    public LocalDate getFechaFin() {
+        return fechaFin;
     }
 
-    public void setCheckOut(LocalDate checkOut) {
-        this.checkOut = checkOut;
+    public void setFechaFin(LocalDate fechaFin) {
+        this.fechaFin = fechaFin;
     }
 
     public EstadoReserva getEstado() {
@@ -65,8 +62,7 @@ public class Reserva {
         this.estado = estado;
     }
 
-  
-
-   
-    
+    public boolean coincideCon(LocalDate fechaInicio, LocalDate fechaFin) {
+        return !(fechaFin.isBefore(this.fechaInicio) || fechaInicio.isAfter(this.fechaFin));
+    }
 }

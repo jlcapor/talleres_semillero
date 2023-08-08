@@ -2,11 +2,10 @@ package main.java.com.poo.alumnos;
 
 public class Calificacion {
     private double valor;
-    private Asignatura asignatura;
 
-    public Calificacion(double valor, Asignatura asignatura) {
+    public Calificacion(double valor) {
         this.valor = valor;
-        this.asignatura = asignatura;
+
     }
 
     public double getValor() {
@@ -17,17 +16,9 @@ public class Calificacion {
         this.valor = valor;
     }
 
-    public Asignatura getAsignatura() {
-        return asignatura;
-    }
-
-    public void setAsignatura(Asignatura asignatura) {
-        this.asignatura = asignatura;
-    }
-
     @Override
     public String toString() {
-        return asignatura.getNombre() + ": " + valor;
+        return String.valueOf(valor);
     }
 
 }
