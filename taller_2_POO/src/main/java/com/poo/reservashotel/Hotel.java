@@ -1,6 +1,5 @@
 package main.java.com.poo.reservashotel;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +17,7 @@ public class Hotel {
         this.cantidadHabitaciones = cantidadHabitaciones;
         this.habitaciones = new ArrayList<>();
         for (int i = 1; i <= cantidadHabitaciones; i++) {
-            habitaciones.add(new Habitacion(i, null));
+            habitaciones.add(new Habitacion(i));
         }
     }
 
@@ -54,8 +53,8 @@ public class Hotel {
         this.cantidadHabitaciones = cantidadHabitaciones;
     }
 
-    public void agregarHabitacion(int numero, TipoHabitacion tipo) {
-        habitaciones.add(new Habitacion(numero, tipo));
+    public void agregarHabitacion(int numero) {
+        habitaciones.add(new Habitacion(numero));
     }
 
     public List<Habitacion> getHabitacionesDisponibles() {

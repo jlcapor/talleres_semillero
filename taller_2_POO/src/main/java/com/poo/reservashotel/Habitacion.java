@@ -6,13 +6,11 @@ import java.util.List;
 
 public class Habitacion {
     private int numeroHabitacion;
-    private TipoHabitacion tipoHabitacion;
     private boolean disponible;
     private List<Reserva> reservas;
 
-    public Habitacion(int numeroHabitacion, TipoHabitacion tipoHabitacion) {
+    public Habitacion(int numeroHabitacion) {
         this.numeroHabitacion = numeroHabitacion;
-        this.tipoHabitacion = tipoHabitacion;
         this.disponible = true;
         this.reservas = new ArrayList<>();
     }
@@ -51,13 +49,4 @@ public class Habitacion {
         disponible = true;
         reservas.remove(reserva);
     }
-
-    public TipoHabitacion getTipoHabitacion() {
-        return tipoHabitacion;
-    }
-
-    public void setTipoHabitacion(TipoHabitacion tipoHabitacion) {
-        this.tipoHabitacion = tipoHabitacion;
-    }
-
 }

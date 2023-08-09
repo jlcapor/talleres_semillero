@@ -1,7 +1,5 @@
 package main.java.com.poo.reservashotel;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Cliente {
     private String nombre;
@@ -10,7 +8,6 @@ public class Cliente {
     private String direccion;
     private String telefono;
     private String correoElectronico;
-    private List<Reserva> reservas;
 
     public Cliente(String nombre, String apellidos, String cedula, String direccion, String telefono,
             String correoElectronico) {
@@ -20,7 +17,6 @@ public class Cliente {
         this.direccion = direccion;
         this.telefono = telefono;
         this.correoElectronico = correoElectronico;
-        this.reservas = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -69,14 +65,6 @@ public class Cliente {
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
-    }
-
-    public List<Habitacion> getHabitacionesReservadas() {
-        List<Habitacion> habitacionesReservadas = new ArrayList<>();
-        for (Reserva reserva : reservas) {
-            habitacionesReservadas.add(reserva.getHabitacion());
-        }
-        return habitacionesReservadas;
     }
 
 }

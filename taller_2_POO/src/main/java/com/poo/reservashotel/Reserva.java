@@ -3,6 +3,7 @@ package main.java.com.poo.reservashotel;
 import java.time.LocalDate;
 
 public class Reserva {
+    
     enum EstadoReserva {
         PENDIENTE,
         CONFIRMADA,
