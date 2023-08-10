@@ -9,6 +9,7 @@ public class Hotel {
     private String telefono;
     private int cantidadHabitaciones;
     private List<Habitacion> habitaciones;
+    private List<Cliente> clientesRegistrados;
 
     public Hotel(String nombre, String direccion, String telefono, int cantidadHabitaciones) {
         this.nombre = nombre;
@@ -19,6 +20,7 @@ public class Hotel {
         for (int i = 1; i <= cantidadHabitaciones; i++) {
             habitaciones.add(new Habitacion(i));
         }
+        this.clientesRegistrados = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -65,6 +67,21 @@ public class Hotel {
             }
         }
         return disponibles;
+    }
+
+    public void registrarCliente(Cliente cliente) {
+        clientesRegistrados.add(cliente);
+    }
+
+    public Cliente obtenerDatosClienteRegistrado(Cliente cliente) {
+        return clientesRegistrados.stream()
+                .filter(c -> c.equals(cliente))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public List<Habitacion> getHabitaciones() {
+        return habitaciones;
     }
 
 }

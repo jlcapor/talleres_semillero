@@ -1,38 +1,26 @@
 package main.java.com.poo.reservashotel;
 
-
 public class Cliente {
-    private String nombre;
-    private String apellidos;
+    private String nombreEmpresa;
     private String cedula;
     private String direccion;
     private String telefono;
     private String correoElectronico;
 
-    public Cliente(String nombre, String apellidos, String cedula, String direccion, String telefono,
-            String correoElectronico) {
-        this.nombre = nombre;
-        this.apellidos = apellidos;
+    public Cliente(String nombreEmpresa, String cedula, String direccion, String telefono, String correoElectronico) {
+        this.nombreEmpresa = nombreEmpresa;
         this.cedula = cedula;
         this.direccion = direccion;
         this.telefono = telefono;
         this.correoElectronico = correoElectronico;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreEmpresa() {
+        return nombreEmpresa;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setNombreEmpresa(String nombreEmpresa) {
+        this.nombreEmpresa = nombreEmpresa;
     }
 
     public String getCedula() {

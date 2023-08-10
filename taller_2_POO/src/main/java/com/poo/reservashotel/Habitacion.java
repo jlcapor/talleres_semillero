@@ -49,4 +49,10 @@ public class Habitacion {
         disponible = true;
         reservas.remove(reserva);
     }
+
+    @Override
+    public String toString() {
+        return "" + numeroHabitacion + "";
+    }
+
 }

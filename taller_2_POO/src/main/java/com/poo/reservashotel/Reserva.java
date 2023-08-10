@@ -1,24 +1,21 @@
 package main.java.com.poo.reservashotel;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Reserva {
-    
-    enum EstadoReserva {
-        PENDIENTE,
-        CONFIRMADA,
-        CANCELADA
-    }
 
     private Cliente cliente;
-    private Habitacion habitacion;
+    private Hotel hotel;
+    private List<Habitacion> habitaciones;
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
-    private EstadoReserva estado;
 
-    public Reserva(Cliente cliente, Habitacion habitacion, LocalDate fechaInicio, LocalDate fechaFin) {
+    public Reserva(Cliente cliente, Hotel hotel, List<Habitacion> habitaciones, LocalDate fechaInicio,
+            LocalDate fechaFin) {
         this.cliente = cliente;
-        this.habitacion = habitacion;
+        this.hotel = hotel;
+        this.habitaciones = habitaciones;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
     }
@@ -31,12 +28,20 @@ public class Reserva {
         this.cliente = cliente;
     }
 
-    public Habitacion getHabitacion() {
-        return habitacion;
+    public Hotel getHotel() {
+        return hotel;
     }
 
-    public void setHabitacion(Habitacion habitacion) {
-        this.habitacion = habitacion;
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
+    }
+
+    public List<Habitacion> getHabitaciones() {
+        return habitaciones;
+    }
+
+    public void setHabitaciones(List<Habitacion> habitaciones) {
+        this.habitaciones = habitaciones;
     }
 
     public LocalDate getFechaInicio() {
@@ -53,14 +58,6 @@ public class Reserva {
 
     public void setFechaFin(LocalDate fechaFin) {
         this.fechaFin = fechaFin;
-    }
-
-    public EstadoReserva getEstado() {
-        return estado;
-    }
-
-    public void setEstado(EstadoReserva estado) {
-        this.estado = estado;
     }
 
     public boolean coincideCon(LocalDate fechaInicio, LocalDate fechaFin) {

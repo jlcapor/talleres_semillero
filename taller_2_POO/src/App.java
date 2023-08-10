@@ -1,18 +1,19 @@
 import javax.swing.JOptionPane;
 
-import main.java.com.poo.alumnos.Alumno;
 import main.java.com.poo.alumnos.SistemaAlumnos;
 import main.java.com.poo.calculadorasimple.Calculadora;
 import main.java.com.poo.calculadorasimple.Division;
 import main.java.com.poo.calculadorasimple.Multiplicacion;
 import main.java.com.poo.calculadorasimple.Resta;
 import main.java.com.poo.calculadorasimple.Suma;
+import main.java.com.poo.reservashotel.SistemaReservasHotel;
 
 public class App {
     public static void main(String[] args) throws Exception {
         Calculadora calculadora = new Calculadora();
         SistemaAlumnos sistemaAlumnos = new SistemaAlumnos();
-        int op = 0, opHotel = 0;
+        SistemaReservasHotel sistemaReservasHotel = new SistemaReservasHotel();
+        int op = 0;
         String menu = "";
         String[] opcionCalculadora = { "Suma", "Resta", "Multiplicación", "División" };
         int selectedOption;
@@ -92,27 +93,7 @@ public class App {
                     } while (continuar);
                     break;
                 case 4:
-                    do {
-                        String menuHotel = JOptionPane.showInputDialog(
-                                "Sistema de Reservas de Hotel\n" +
-                                        "1. Ver hoteles y habitaciones disponibles\n" +
-                                        "2. Realizar reserva\n" +
-                                        "3. Cancelar reserva\n" +
-                                        "4. Ver registro de clientes\n" +
-                                        "5. Salir\n" +
-                                        "Ingrese la opción deseada:");
-                        opHotel = Integer.parseInt(menuHotel);
-                        switch (opHotel) {
-                            case 1:
-                                break;
-                            case 2:
-                                break;
-                            case 3:
-                                break;
-                            default:
-
-                        }
-                    } while (opHotel == 5);
+                    sistemaReservasHotel.mostrarMenu();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "La opcion no es correcta");
