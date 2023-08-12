@@ -104,7 +104,7 @@ public class SistemaReservasHotel {
                 reservas.add(reserva);
                 StringBuilder mensajeReserva = new StringBuilder("Reserva realizada:\n\n");
                 mensajeReserva.append("Empresa: ").append(reserva.getCliente().getNombreEmpresa()).append("\n");
-                mensajeReserva.append("NIT: ").append(reserva.getCliente().getCedula()).append("\n");
+                mensajeReserva.append("Cedula: ").append(reserva.getCliente().getCedula()).append("\n");
                 mensajeReserva.append("Hotel: ").append(reserva.getHotel().getNombre()).append("\n");
                 mensajeReserva.append("Habitaciones:\n");
                 for (Habitacion habitacion : reserva.getHabitaciones()) {
