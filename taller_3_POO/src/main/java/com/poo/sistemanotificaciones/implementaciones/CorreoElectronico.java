@@ -10,7 +10,9 @@ public class CorreoElectronico extends NotificacionCorreoElectronico {
 
     @Override
     public void enviar() {
-        throw new UnsupportedOperationException("Unimplemented method 'enviar'");
+        System.out.println("Enviando correo electronico a " + getDestinatario());
+        System.out.println("Asunto  " + getAsunto());
+        System.out.println("Mensaje: \n" + getMensaje());
     }
 
 }

@@ -6,7 +6,7 @@ import main.java.com.poo.tiendalinea.productoespecífico.Camiseta;
 public class TiendaEnLinea {
     public static void main(String[] args) {
         Producto camiseta = new Camiseta("Ropa", "Nike Sportswear Club", "Esta playera Nike Club", 2, 200000);
+        System.out.println(camiseta.calcularPrecio());
         camiseta.mostrarDetalles();
-
     }
 }
