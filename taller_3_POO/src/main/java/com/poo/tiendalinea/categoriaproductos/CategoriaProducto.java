@@ -1,6 +1,6 @@
 package main.java.com.poo.tiendalinea.categoriaproductos;
 
-public abstract class CategoriaProducto implements Producto {
+public abstract class CategoriaProducto implements IProducto {
 
     protected String nombreCategoria;
     protected String nombreProducto;
