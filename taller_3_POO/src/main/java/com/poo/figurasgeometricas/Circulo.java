@@ -1,8 +1,6 @@
-package main.java.com.poo.figurasgeometricas.implementacion;
+package main.java.com.poo.figurasgeometricas;
 
-import main.java.com.poo.figurasgeometricas.contrato.FiguraGeometrica;
-
-public class Circulo implements FiguraGeometrica {
+public class Circulo implements Figura {
 
     private double radio;
 
@@ -20,12 +18,12 @@ public class Circulo implements FiguraGeometrica {
 
     @Override
     public double calcularArea() {
-        return Math.PI * this.radio * this.radio;
+        return Math.PI * Math.pow(this.radio, 2);
     }
 
     @Override
     public double calcularPerimetro() {
-        return 2 * Math.PI * radio;
+        return 2 * Math.PI * this.radio;
     }
 
 }

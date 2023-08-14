@@ -1,8 +1,6 @@
-package main.java.com.poo.figurasgeometricas.implementacion;
+package main.java.com.poo.figurasgeometricas;
 
-import main.java.com.poo.figurasgeometricas.contrato.FiguraGeometrica;
-
-public class Triangulo implements FiguraGeometrica {
+public class Triangulo implements Figura {
     private double base;
     private double altura;
     private double lado1;
