@@ -16,8 +16,8 @@ public class FigurasGeometrica {
 
         System.out.println("---------Triangulo--------");
         triangulo = new Triangulo(6, 12, 5.0, 10.2, 8.0);
-        System.out.println("Area del triángulo: "+triangulo.calcularArea());
-        System.out.println("Perimetro del triángulo:"+triangulo.calcularPerimetro());
+        System.out.println("Area del triángulo: " + triangulo.calcularArea());
+        System.out.println("Perimetro del triángulo:" + triangulo.calcularPerimetro());
 
     }
 }
